@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'dana';
+    src: url(../fonts/dm.ttf);
+}
+
+body {
+    font-family: dana, sans-serif;
+}
