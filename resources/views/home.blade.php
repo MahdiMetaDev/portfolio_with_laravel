@@ -7,7 +7,7 @@
         <div class="d-flex justify-content-center box">
             <div class="card shadow my-3 p-5 w-sm-75 w-100">
                 <div class="card-body">
-                    <h1>You have logged in. for more information check the dropdown menu.</h1>
+                    <h1>You have logged in.</h1>
                 </div>
             </div>
         </div>
