@@ -11,7 +11,7 @@ class UserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,17 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
+        $rules = [
+            'name' => 'required|string',
+            'password' => 'required|min:8',
         ];
+
+        if (request()->method() == self::METHOD_POST) {
+            $rules['email'] = 'required|email|unique:users,email';
+        } elseif (request()->method() == self::METHOD_PATCH) {
+            $rules['email'] = 'required|email|unique:users,email,' . $this->user->id;
+        }
+
+        return $rules;
     }
 }
