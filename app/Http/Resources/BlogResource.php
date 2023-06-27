@@ -18,6 +18,8 @@ class BlogResource extends JsonResource
             'id' => $this->id,
             'blog_title' => $this->title,
             'published' => $this->published == 1 ? 'true' : 'false',
+            'created_at' => $this->created_at->format('m/d/Y'),
+            'updated_at' => $this->updated_at->format('m/d/Y'),
         ];
     }
 }
