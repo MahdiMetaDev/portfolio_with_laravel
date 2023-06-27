@@ -26,15 +26,8 @@ class UserRequest extends FormRequest
         ];
 
         if (request()->method() == self::METHOD_POST) {
-            if (str_contains(request()->route()->uri, 'api/login')) {
-                $rules['email'] = 'required|email';
-            } elseif (str_contains(request()->route()->uri, 'api/register')) {
-                $rules['email'] = 'required|email|unique:users,email';
-            }
-            else {
-                $rules['email'] = 'required|email|unique:users,email';
-            }
-            $rules['password'] = 'required|min:8';
+            $rules['email'] = 'required|email|unique:users,email';
+            $rules['password'] = 'required|min:6';
             $rules['c_password'] = 'required|same:password';
         } elseif (request()->method() == self::METHOD_PATCH) {
             $rules['email'] = 'required|email|unique:users,email,' . $this->user->id;

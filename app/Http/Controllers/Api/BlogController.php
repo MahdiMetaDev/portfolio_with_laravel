@@ -31,11 +31,7 @@ class BlogController extends ApiBaseController
      */
     public function store(BlogRequest $request)
     {
-        try {
-            $blog = $this->blogService->store($request->validated());
-        } catch (\Exception $error) {
-            return $this->sendError('Validation Error', $error);
-        }
+        $blog = $this->blogService->store($request->validated());
 
         return $this->sendResponse(
             BlogResource::make($blog),
@@ -65,11 +61,7 @@ class BlogController extends ApiBaseController
      */
     public function update(BlogRequest $request, Blog $blog)
     {
-        try {
-            $this->blogService->update($blog, $request->validated());
-        } catch (\Exception $error) {
-            return $this->sendError('Validation Error!', $error);
-        }
+        $this->blogService->update($blog, $request->validated());
 
         return $this->sendResponse(
             BlogResource::make($blog),

@@ -32,11 +32,7 @@ class UserController extends ApiBaseController
      */
     public function store(UserRequest $request): JsonResponse
     {
-        try {
-            $user = $this->userService->store($request->validated());
-        } catch (\Exception $exception) {
-            return $this->sendError('Validation Error', $exception);
-        }
+        $user = $this->userService->store($request->validated());
 
         return $this->sendResponse(
             UserResource::make($user),
@@ -66,11 +62,7 @@ class UserController extends ApiBaseController
      */
     public function update(UserRequest $request, User $user)
     {
-        try {
-            $this->userService->update($user, $request->validated());
-        } catch (\Exception $error) {
-            return $this->sendError('Validation Error!', $error);
-        }
+        $this->userService->update($user, $request->validated());
 
         return $this->sendResponse(
             UserResource::make($user),

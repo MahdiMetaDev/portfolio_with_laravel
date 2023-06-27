@@ -1,7 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Api\ApiBaseController;
+use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\UserRequest;
 use App\Http\Services\UserService;
 use Illuminate\Support\Facades\Auth;
@@ -12,21 +15,16 @@ class RegisterController extends ApiBaseController
     {
     }
 
-    public function register(UserRequest $request)
+    public function register(RegisterRequest $request)
     {
-        try {
-            $payload = $request->validated();
-        } catch (\Exception $error) {
-            return $this->sendError('Validation Error occurred!', $error);
-        }
-        $user = $this->userService->store($payload);
+        $user = $this->userService->store($request->validated());
         $success['token'] = $user->createToken('MyApp')->plainTextToken;
         $success['name'] = $user->name;
 
         return $this->sendResponse($success, 'User Registered Successfully!');
     }
 
-    public function login(UserRequest $request)
+    public function login(LoginRequest $request)
     {
         $credentials = $request->validated();
 
