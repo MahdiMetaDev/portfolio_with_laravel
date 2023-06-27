@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class BlogController extends ApiBaseController
 {
     /**
      * Display a listing of the resource.
