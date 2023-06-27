@@ -21,18 +21,25 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
-
         $rules = [
             'name' => 'required|string',
         ];
 
         if (request()->method() == self::METHOD_POST) {
-            $rules['email'] = 'required|email|unique:users,email';
+            if (str_contains(request()->route()->uri, 'api/login')) {
+                $rules['email'] = 'required|email';
+            } elseif (str_contains(request()->route()->uri, 'api/register')) {
+                $rules['email'] = 'required|email|unique:users,email';
+            }
+            else {
+                $rules['email'] = 'required|email|unique:users,email';
+            }
             $rules['password'] = 'required|min:8';
             $rules['c_password'] = 'required|same:password';
         } elseif (request()->method() == self::METHOD_PATCH) {
             $rules['email'] = 'required|email|unique:users,email,' . $this->user->id;
         }
+
         return $rules;
     }
 }
