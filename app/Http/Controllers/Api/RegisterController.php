@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\UserRequest;
 use App\Http\Services\UserService;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Mockery\Exception;
 
 class RegisterController extends ApiBaseController
 {
@@ -18,7 +16,7 @@ class RegisterController extends ApiBaseController
     {
         try {
             $payload = $request->validated();
-        } catch (Exception $error) {
+        } catch (\Exception $error) {
             return $this->sendError('Validation Error occurred!', $error);
         }
 

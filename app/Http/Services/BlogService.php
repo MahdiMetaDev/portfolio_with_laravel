@@ -4,6 +4,7 @@ namespace App\Http\Services;
 
 use App\Http\Resources\BlogResource;
 use App\Models\Blog;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class BlogService extends BaseService
 {
@@ -12,7 +13,7 @@ class BlogService extends BaseService
         parent::__construct($blog);
     }
 
-    public function show(Blog $blog)
+    public function show(Blog $blog): JsonResource
     {
         return BlogResource::make($blog);
     }

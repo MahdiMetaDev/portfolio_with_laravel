@@ -11,7 +11,7 @@ class ApiBaseController extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    protected function sendResponse($data, string|null $message = null, int $statusCode = 200): JsonResponse
+    protected function sendResponse($data = [], string|null $message = null, int $statusCode = 200): JsonResponse
     {
         return response()->json(compact('data', 'message'), $statusCode);
     }
