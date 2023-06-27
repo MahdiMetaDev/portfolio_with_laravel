@@ -21,6 +21,7 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
+
         $rules = [
             'name' => 'required|string',
         ];
@@ -32,7 +33,6 @@ class UserRequest extends FormRequest
         } elseif (request()->method() == self::METHOD_PATCH) {
             $rules['email'] = 'required|email|unique:users,email,' . $this->user->id;
         }
-
         return $rules;
     }
 }

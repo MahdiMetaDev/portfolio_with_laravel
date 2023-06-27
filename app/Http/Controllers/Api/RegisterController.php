@@ -19,7 +19,6 @@ class RegisterController extends ApiBaseController
         } catch (\Exception $error) {
             return $this->sendError('Validation Error occurred!', $error);
         }
-
         $user = $this->userService->store($payload);
         $success['token'] = $user->createToken('MyApp')->plainTextToken;
         $success['name'] = $user->name;

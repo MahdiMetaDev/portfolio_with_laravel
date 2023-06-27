@@ -18,7 +18,7 @@ class BaseService
 
     public function store(array $payload = []): Model
     {
-        return $this->model->create();
+        return $this->model->create($payload);
     }
 
     public function update($model, array $payload = []): Model
