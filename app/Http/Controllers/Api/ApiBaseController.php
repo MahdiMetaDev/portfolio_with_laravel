@@ -21,6 +21,6 @@ class ApiBaseController extends BaseController
         if (!empty($errorMessages)) {
             return response()->json(compact('error', 'errorMessages'), $statusCode);
         }
-        return response()->json('error', $statusCode);
+        return response()->json($error, $statusCode);
     }
 }
