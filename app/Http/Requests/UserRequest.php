@@ -23,11 +23,12 @@ class UserRequest extends FormRequest
     {
         $rules = [
             'name' => 'required|string',
-            'password' => 'required|min:8',
         ];
 
         if (request()->method() == self::METHOD_POST) {
             $rules['email'] = 'required|email|unique:users,email';
+            $rules['password'] = 'required|min:8';
+            $rules['c_password'] = 'required|same:password';
         } elseif (request()->method() == self::METHOD_PATCH) {
             $rules['email'] = 'required|email|unique:users,email,' . $this->user->id;
         }
