@@ -6,7 +6,7 @@ use App\Http\Requests\BlogRequest;
 use App\Http\Resources\BlogResource;
 use App\Http\Services\BlogService;
 use App\Models\Blog;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class BlogController extends ApiBaseController
 {
@@ -61,6 +61,10 @@ class BlogController extends ApiBaseController
      */
     public function update(BlogRequest $request, Blog $blog)
     {
+//        if (! Gate::allows('update-blog', $blog)) {
+//            abort(403);
+//        }
+
         $this->blogService->update($blog, $request->validated());
 
         return $this->sendResponse(
