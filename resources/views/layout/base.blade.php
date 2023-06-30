@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ProMan - Personal Portfolio HTML Template</title>
+    <title>Malekifard Portfolio</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -12,9 +12,9 @@
     <link href="{{ asset('assets/img/favicon.ico') }}" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https:/fonts.googleapis.com">
+    <link rel="preconnect" href="https:/fonts.gstatic.com" crossorigin>
+    <link href="https:/fonts.googleapis.com/css2?family=Open+Sans400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -34,11 +34,11 @@
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
 <!-- Spinner Start -->
-{{--<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">--}}
-{{--    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">--}}
-{{--        <span class="sr-only">Loading...</span>--}}
-{{--    </div>--}}
-{{--</div>--}}
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
 <!-- Spinner End -->
 
 
@@ -76,10 +76,10 @@
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="d-flex align-items-center mb-5">
                     <div class="years flex-shrink-0 text-center me-4">
-                        <h1 class="display-1 mb-0">15</h1>
-                        <h5 class="mb-0">Years</h5>
+                        <h1 class="display-1 mb-0">2</h1>
+                        <h5 class="mb-0">Months</h5>
                     </div>
-                    <h3 class="lh-base mb-0">of working experience as a web designer & developer</h3>
+                    <h3 class="lh-base mb-0">of working experience as a php backend developer at MetaNext</h3>
                 </div>
                 <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.</p>
                 <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Afordable Prices</p>
@@ -135,19 +135,19 @@
                         <div class="skill mb-4">
                             <div class="d-flex justify-content-between">
                                 <h6 class="font-weight-bold">CSS</h6>
-                                <h6 class="font-weight-bold">85%</h6>
+                                <h6 class="font-weight-bold">65%</h6>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         <div class="skill mb-4">
                             <div class="d-flex justify-content-between">
                                 <h6 class="font-weight-bold">PHP</h6>
-                                <h6 class="font-weight-bold">90%</h6>
+                                <h6 class="font-weight-bold">80%</h6>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
@@ -155,15 +155,15 @@
                         <div class="skill mb-4">
                             <div class="d-flex justify-content-between">
                                 <h6 class="font-weight-bold">Javascript</h6>
-                                <h6 class="font-weight-bold">90%</h6>
+                                <h6 class="font-weight-bold">50%</h6>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         <div class="skill mb-4">
                             <div class="d-flex justify-content-between">
-                                <h6 class="font-weight-bold">Angular JS</h6>
+                                <h6 class="font-weight-bold">Python</h6>
                                 <h6 class="font-weight-bold">95%</h6>
                             </div>
                             <div class="progress">
@@ -172,11 +172,11 @@
                         </div>
                         <div class="skill mb-4">
                             <div class="d-flex justify-content-between">
-                                <h6 class="font-weight-bold">Wordpress</h6>
-                                <h6 class="font-weight-bold">85%</h6>
+                                <h6 class="font-weight-bold">Django</h6>
+                                <h6 class="font-weight-bold">70%</h6>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
@@ -195,56 +195,20 @@
                     <div id="tab-1" class="tab-pane fade show p-0 active">
                         <div class="row gy-5 gx-4">
                             <div class="col-sm-6">
-                                <h5>UI Designer</h5>
+                                <h5>Php/Laravel backend developer</h5>
                                 <hr class="text-primary my-2">
-                                <p class="text-primary mb-1">2000 - 2045</p>
-                                <h6 class="mb-0">Apex Software Inc</h6>
-                            </div>
-                            <div class="col-sm-6">
-                                <h5>Product Designer</h5>
-                                <hr class="text-primary my-2">
-                                <p class="text-primary mb-1">2000 - 2045</p>
-                                <h6 class="mb-0">Apex Software Inc</h6>
-                            </div>
-                            <div class="col-sm-6">
-                                <h5>Web Designer</h5>
-                                <hr class="text-primary my-2">
-                                <p class="text-primary mb-1">2000 - 2045</p>
-                                <h6 class="mb-0">Apex Software Inc</h6>
-                            </div>
-                            <div class="col-sm-6">
-                                <h5>Apps Designer</h5>
-                                <hr class="text-primary my-2">
-                                <p class="text-primary mb-1">2000 - 2045</p>
-                                <h6 class="mb-0">Apex Software Inc</h6>
+                                <p class="text-primary mb-1">2023 - 2026</p>
+                                <h6 class="mb-0">MetaNext Software Inc</h6>
                             </div>
                         </div>
                     </div>
                     <div id="tab-2" class="tab-pane fade show p-0">
                         <div class="row gy-5 gx-4">
                             <div class="col-sm-6">
-                                <h5>UI Design Course</h5>
+                                <h5>php/laravel course</h5>
                                 <hr class="text-primary my-2">
-                                <p class="text-primary mb-1">2000 - 2045</p>
-                                <h6 class="mb-0">Cambridge University</h6>
-                            </div>
-                            <div class="col-sm-6">
-                                <h5>IOS Development</h5>
-                                <hr class="text-primary my-2">
-                                <p class="text-primary mb-1">2000 - 2045</p>
-                                <h6 class="mb-0">Cambridge University</h6>
-                            </div>
-                            <div class="col-sm-6">
-                                <h5>Web Design</h5>
-                                <hr class="text-primary my-2">
-                                <p class="text-primary mb-1">2000 - 2045</p>
-                                <h6 class="mb-0">Cambridge University</h6>
-                            </div>
-                            <div class="col-sm-6">
-                                <h5>Apps Design</h5>
-                                <hr class="text-primary my-2">
-                                <p class="text-primary mb-1">2000 - 2045</p>
-                                <h6 class="mb-0">Cambridge University</h6>
+                                <p class="text-primary mb-1">2023 - 2024</p>
+                                <h6 class="mb-0">MetaNext collage</h6>
                             </div>
                         </div>
                     </div>
@@ -531,7 +495,7 @@
         <div class="row g-5">
             <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <p class="mb-2">My office:</p>
-                <h3 class="fw-bold">123 Street, New York, USA</h3>
+                <h3 class="fw-bold">Iran - MetaNext-Babanazar</h3>
                 <hr class="w-100">
                 <p class="mb-2">Call me:</p>
                 <h3 class="fw-bold">+012 345 6789</h3>
