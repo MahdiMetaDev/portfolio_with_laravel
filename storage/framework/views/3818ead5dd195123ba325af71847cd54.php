@@ -1,0 +1,2 @@
+
+<?php echo $__env->make('web.layout.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\PROJECTS\portfolio\resources\views/web/portfolio/index.blade.php ENDPATH**/ ?>
