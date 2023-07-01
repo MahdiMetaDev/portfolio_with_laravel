@@ -18,8 +18,6 @@ return new class extends Migration {
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
 
-            $table->string('first_name');
-            $table->string('last_name');
             $table->string('national_code');
             $table->string('phone_number');
 

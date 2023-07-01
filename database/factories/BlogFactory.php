@@ -19,7 +19,7 @@ class BlogFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::inRandomOrder()->first()->id,
+            'user_id' => User::distinct()->inRandomOrder()->first()->id,
             'title' => fake()->name,
             'description' => fake()->paragraph(3),
         ];

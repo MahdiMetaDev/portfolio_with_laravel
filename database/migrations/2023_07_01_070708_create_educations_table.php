@@ -20,8 +20,8 @@ return new class extends Migration
                 ->cascadeOnDelete();
 
             $table->string('university')->nullable();
-            $table->tinyInteger('enter_year');
-            $table->tinyInteger('exit_year');
+            $table->Integer('enter_year')->nullable();
+            $table->Integer('exit_year')->nullable();
             $table->float('GPA')->nullable();
             $table->string('field')->nullable();
             $table->string('grade')->nullable();

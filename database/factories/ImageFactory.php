@@ -17,7 +17,9 @@ class ImageFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'url' => 'images/' . now(),
+            'name' => 'images/testName',
+            'extension' => '.png'
         ];
     }
 }

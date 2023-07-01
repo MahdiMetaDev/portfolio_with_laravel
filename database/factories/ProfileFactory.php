@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class ProfileFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => User::factory(),
+            'national_code' => fake()->randomNumber(9),
+            'phone_number' => '0915' . fake()->randomNumber(7),
+            'date_of_birth' => $this->faker->dateTime,
         ];
     }
 }
