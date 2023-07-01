@@ -1,1 +1,1 @@
-@extends('web.layout.base')
+@extends('web.portfolio.layout.base')

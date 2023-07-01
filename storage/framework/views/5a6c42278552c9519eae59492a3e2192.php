@@ -1,26 +1,22 @@
-<!-- Header Start -->
-<div class="container-fluid bg-light my-6 mt-0" id="home">
-    <div class="container">
-        <div class="row g-5 align-items-center">
-            <div class="col-lg-6 py-6 pb-0 pt-lg-0">
-                <h3 class="text-primary mb-3">I'm</h3>
-                <h1 class="display-3 mb-3">Mahdi Malekifard</h1>
-                <h2 class="typed-text-output d-inline"></h2>
-                <div class="typed-text d-none">Web Developer, BackEnd Developer, Php Developer, MetaNext Junior BackEnd Developer</div>
-                <div class="d-flex align-items-center pt-5">
-                    <a href="" class="btn btn-primary py-3 px-4 me-5">Download CV</a>
-                    <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://metanext.biz" data-bs-target="#videoModal">
-                        <span></span>
-                    </button>
-                    <h5 class="ms-4 mb-0 d-none d-sm-block">Play Video</h5>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <img class="img-fluid" src="<?php echo e(asset('assets/img/perfil.png')); ?>" alt="">
-            </div>
+<!--===== HEADER =====-->
+<header class="l-header">
+    <nav class="nav bd-grid">
+        <div>
+            <a href="#" class="nav__logo"></a>
         </div>
-    </div>
-</div>
-<!-- Header End -->
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="<?php echo e(route('site.root')); ?>" class="nav__link active">Home</a></li>
+                <li class="nav__item"><a href="<?php echo e(route('site.blog.index')); ?>" class="nav__link">Blog</a></li>
+                <li class="nav__item"><a href="<?php echo e(route('site.portfolio.index')); ?>" class="nav__link">Portfolio</a></li>
+                <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+            <i class='bx bx-menu'></i>
+        </div>
+    </nav>
+</header>
 <?php /**PATH D:\PROJECTS\portfolio\resources\views/web/layout/header.blade.php ENDPATH**/ ?>

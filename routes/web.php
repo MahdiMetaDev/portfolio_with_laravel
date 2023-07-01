@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\PortfolioController;
+use App\Http\Controllers\Web\BlogController;
 use App\Http\Controllers\Web\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('root');
+Route::get('portfolio', [PortfolioController::class, 'index'])->name('portfolio.index');
+Route::resource('blog', BlogController::class);

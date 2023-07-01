@@ -43,10 +43,10 @@
 <!-- Spinner End -->
 
 
-@include('web.layout.navbar')
+@include('web.portfolio.layout.navbar')
 
 
-@include('web.layout.header')
+@include('web.portfolio.layout.header')
 
 
 <!-- Video Modal Start -->

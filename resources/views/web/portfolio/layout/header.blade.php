@@ -17,10 +17,9 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <img class="img-fluid" src="<?php echo e(asset('assets/img/mahdi.png')); ?>" alt="">
+                <img class="img-fluid" src="{{ asset('assets/img/perfil.png') }}" alt="">
             </div>
         </div>
     </div>
 </div>
 <!-- Header End -->
-<?php /**PATH D:\PROJECTS\portfolio\resources\views/layout/header.blade.php ENDPATH**/ ?>
