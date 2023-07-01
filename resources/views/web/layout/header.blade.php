@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <img class="img-fluid" src="{{ asset('assets/img/mahdi.png') }}" alt="">
+                <img class="img-fluid" src="{{ asset('assets/img/perfil.png') }}" alt="">
             </div>
         </div>
     </div>

@@ -34,7 +34,8 @@
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
 <!-- Spinner Start -->
-<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+<div id="spinner"
+     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
     <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
         <span class="sr-only">Loading...</span>
     </div>
@@ -42,14 +43,15 @@
 <!-- Spinner End -->
 
 
-@include('layout.navbar')
+@include('web.layout.navbar')
 
 
-@include('layout.header')
+@include('web.layout.header')
 
 
 <!-- Video Modal Start -->
-<div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content rounded-0">
             <div class="modal-header">
@@ -81,7 +83,8 @@
                     </div>
                     <h3 class="lh-base mb-0">of working experience as a php backend developer at MetaNext</h3>
                 </div>
-                <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.</p>
+                <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet
+                    diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.</p>
                 <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Afordable Prices</p>
                 <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>High Quality Product</p>
                 <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>On Time Project Delivery</p>
@@ -100,12 +103,14 @@
                     <h5 class="border-end pe-3 me-3 mb-0">Happy Clients</h5>
                     <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">1234</h2>
                 </div>
-                <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam amet diam ipsum clita labore dolor duo clita.</p>
+                <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam amet diam
+                    ipsum clita labore dolor duo clita.</p>
                 <div class="d-flex align-items-center mb-3">
                     <h5 class="border-end pe-3 me-3 mb-0">Projects Completed</h5>
                     <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">1234</h2>
                 </div>
-                <p class="mb-0">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam amet diam ipsum clita labore dolor duo clita.</p>
+                <p class="mb-0">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam amet diam
+                    ipsum clita labore dolor duo clita.</p>
             </div>
         </div>
     </div>
@@ -119,7 +124,8 @@
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <h1 class="display-5 mb-5">Skills & Experience</h1>
-                <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum clita dolor duo clita sit.</p>
+                <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet
+                    diam ipsum clita dolor duo clita sit.</p>
                 <h3 class="mb-4">My Skills</h3>
                 <div class="row align-items-center">
                     <div class="col-md-6">
@@ -129,7 +135,8 @@
                                 <h6 class="font-weight-bold">95%</h6>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         <div class="skill mb-4">
@@ -138,7 +145,8 @@
                                 <h6 class="font-weight-bold">65%</h6>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="65"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         <div class="skill mb-4">
@@ -147,7 +155,8 @@
                                 <h6 class="font-weight-bold">80%</h6>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
@@ -158,7 +167,8 @@
                                 <h6 class="font-weight-bold">50%</h6>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         <div class="skill mb-4">
@@ -167,7 +177,8 @@
                                 <h6 class="font-weight-bold">95%</h6>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         <div class="skill mb-4">
@@ -176,7 +187,8 @@
                                 <h6 class="font-weight-bold">70%</h6>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="70"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
@@ -185,7 +197,8 @@
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                 <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
                     <li class="nav-item w-50">
-                        <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">Experience</button>
+                        <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">Experience
+                        </button>
                     </li>
                     <li class="nav-item w-50">
                         <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">Education</button>
@@ -306,8 +319,11 @@
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="{{ asset('assets/img/project-1.jpg') }}" alt="">
                     <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="{{ asset('assets/img/project-1.jpg') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
+                           href="{{ asset('assets/img/project-1.jpg') }}" data-lightbox="portfolio"><i
+                                class="fa fa-eye"></i></a>
+                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i
+                                class="fa fa-link"></i></a>
                     </div>
                 </div>
             </div>
@@ -315,8 +331,11 @@
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="{{ asset('assets/img/project-2.jpg') }}" alt="">
                     <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="{{ asset('assets/img/project-2.jpg') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
+                           href="{{ asset('assets/img/project-2.jpg') }}" data-lightbox="portfolio"><i
+                                class="fa fa-eye"></i></a>
+                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i
+                                class="fa fa-link"></i></a>
                     </div>
                 </div>
             </div>
@@ -324,8 +343,11 @@
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="{{ asset('assets/img/project-3.jpg') }}" alt="">
                     <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="{{ asset('assets/img/project-3.jpg') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
+                           href="{{ asset('assets/img/project-3.jpg') }}" data-lightbox="portfolio"><i
+                                class="fa fa-eye"></i></a>
+                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i
+                                class="fa fa-link"></i></a>
                     </div>
                 </div>
             </div>
@@ -333,8 +355,11 @@
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="{{ asset('assets/img/project-4.jpg') }}" alt="">
                     <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="{{ asset('assets/img/project-4.jpg') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
+                           href="{{ asset('assets/img/project-4.jpg') }}" data-lightbox="portfolio"><i
+                                class="fa fa-eye"></i></a>
+                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i
+                                class="fa fa-link"></i></a>
                     </div>
                 </div>
             </div>
@@ -342,8 +367,11 @@
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="{{ asset('assets/img/project-5.jpg') }}" alt="">
                     <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="{{ asset('assets/img/project-5.jpg') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
+                           href="{{ asset('assets/img/project-5.jpg') }}" data-lightbox="portfolio"><i
+                                class="fa fa-eye"></i></a>
+                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i
+                                class="fa fa-link"></i></a>
                     </div>
                 </div>
             </div>
@@ -351,8 +379,11 @@
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="{{ asset('assets/img/project-6.jpg') }}" alt="">
                     <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="{{ asset('assets/img/project-6.jpg') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
+                           href="{{ asset('assets/img/project-6.jpg') }}" data-lightbox="portfolio"><i
+                                class="fa fa-eye"></i></a>
+                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i
+                                class="fa fa-link"></i></a>
                     </div>
                 </div>
             </div>
@@ -423,45 +454,57 @@
         <div class="row justify-content-center">
             <div class="col-lg-3 d-none d-lg-block">
                 <div class="testimonial-left h-100">
-                    <img class="img-fluid wow fadeIn" data-wow-delay="0.1s" src="{{ asset('assets/img/testimonial-1.jpg') }}" alt="">
-                    <img class="img-fluid wow fadeIn" data-wow-delay="0.3s" src="{{ asset('assets/img/testimonial-2.jpg') }}" alt="">
-                    <img class="img-fluid wow fadeIn" data-wow-delay="0.5s" src="{{ asset('assets/img/testimonial-3.jpg') }}" alt="">
+                    <img class="img-fluid wow fadeIn" data-wow-delay="0.1s"
+                         src="{{ asset('assets/img/testimonial-1.jpg') }}" alt="">
+                    <img class="img-fluid wow fadeIn" data-wow-delay="0.3s"
+                         src="{{ asset('assets/img/testimonial-2.jpg') }}" alt="">
+                    <img class="img-fluid wow fadeIn" data-wow-delay="0.5s"
+                         src="{{ asset('assets/img/testimonial-3.jpg') }}" alt="">
                 </div>
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="owl-carousel testimonial-carousel">
                     <div class="testimonial-item text-center">
                         <div class="position-relative mb-5">
-                            <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="{{ asset('assets/img/testimonial-1.jpg') }}" alt="">
+                            <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto"
+                                 src="{{ asset('assets/img/testimonial-1.jpg') }}" alt="">
                             <div class="testimonial-icon">
                                 <i class="fa fa-quote-left text-primary"></i>
                             </div>
                         </div>
-                        <p class="fs-5 fst-italic">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
+                        <p class="fs-5 fst-italic">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore
+                            dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor
+                            erat.</p>
                         <hr class="w-25 mx-auto">
                         <h5>Client Name</h5>
                         <span>Profession</span>
                     </div>
                     <div class="testimonial-item text-center">
                         <div class="position-relative mb-5">
-                            <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="{{ asset('assets/img/testimonial-2.jpg') }}" alt="">
+                            <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto"
+                                 src="{{ asset('assets/img/testimonial-2.jpg') }}" alt="">
                             <div class="testimonial-icon">
                                 <i class="fa fa-quote-left text-primary"></i>
                             </div>
                         </div>
-                        <p class="fs-5 fst-italic">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
+                        <p class="fs-5 fst-italic">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore
+                            dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor
+                            erat.</p>
                         <hr class="w-25 mx-auto">
                         <h5>Client Name</h5>
                         <span>Profession</span>
                     </div>
                     <div class="testimonial-item text-center">
                         <div class="position-relative mb-5">
-                            <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="{{ asset('assets/img/testimonial-3.jpg') }}" alt="">
+                            <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto"
+                                 src="{{ asset('assets/img/testimonial-3.jpg') }}" alt="">
                             <div class="testimonial-icon">
                                 <i class="fa fa-quote-left text-primary"></i>
                             </div>
                         </div>
-                        <p class="fs-5 fst-italic">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
+                        <p class="fs-5 fst-italic">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore
+                            dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor
+                            erat.</p>
                         <hr class="w-25 mx-auto">
                         <h5>Client Name</h5>
                         <span>Profession</span>
@@ -470,9 +513,12 @@
             </div>
             <div class="col-lg-3 d-none d-lg-block">
                 <div class="testimonial-right h-100">
-                    <img class="img-fluid wow fadeIn" data-wow-delay="0.1s" src="{{ asset('assets/img/testimonial-1.jpg') }}" alt="">
-                    <img class="img-fluid wow fadeIn" data-wow-delay="0.3s" src="{{ asset('assets/img/testimonial-2.jpg') }}" alt="">
-                    <img class="img-fluid wow fadeIn" data-wow-delay="0.5s" src="{{ asset('assets/img/testimonial-3.jpg') }}" alt="">
+                    <img class="img-fluid wow fadeIn" data-wow-delay="0.1s"
+                         src="{{ asset('assets/img/testimonial-1.jpg') }}" alt="">
+                    <img class="img-fluid wow fadeIn" data-wow-delay="0.3s"
+                         src="{{ asset('assets/img/testimonial-2.jpg') }}" alt="">
+                    <img class="img-fluid wow fadeIn" data-wow-delay="0.5s"
+                         src="{{ asset('assets/img/testimonial-3.jpg') }}" alt="">
                 </div>
             </div>
         </div>
@@ -512,7 +558,9 @@
                 </div>
             </div>
             <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with
+                    Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a
+                        href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
                 <form>
                     <div class="row g-3">
                         <div class="col-md-6">
@@ -535,7 +583,8 @@
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                <textarea class="form-control" placeholder="Leave a message here" id="message"
+                                          style="height: 100px"></textarea>
                                 <label for="message">Message</label>
                             </div>
                         </div>
@@ -575,7 +624,8 @@
             <div class="col-md-6 text-center text-md-end">
                 <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                 Designed By <a class="border-bottom text-secondary" href="https://htmlcodex.com">HTML Codex</a>
-                <br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                <br>Distributed By: <a class="border-bottom" href="https://themewagon.com"
+                                       target="_blank">ThemeWagon</a>
             </div>
         </div>
     </div>
