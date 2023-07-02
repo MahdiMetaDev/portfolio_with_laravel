@@ -4691,3 +4691,25 @@
 #50 D:\\PROJECTS\\portfolio\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('D:\\\\PROJECTS\\\\por...')
 #51 {main}
 "} 
+[2023-07-02 05:12:34] local.ERROR: file_get_contents(D:\PROJECTS\portfolio\resources\views/welcome.blade.php): Failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): file_get_contents(D:\\PROJECTS\\portfolio\\resources\\views/welcome.blade.php): Failed to open stream: No such file or directory at D:\\PROJECTS\\portfolio\\vendor\\laravel\\breeze\\src\\Console\\InstallCommand.php:267)
+[stacktrace]
+#0 D:\\PROJECTS\\portfolio\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(254): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_get_conten...', 'D:\\\\PROJECTS\\\\por...', 267)
+#1 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'file_get_conten...', 'D:\\\\PROJECTS\\\\por...', 267)
+#2 D:\\PROJECTS\\portfolio\\vendor\\laravel\\breeze\\src\\Console\\InstallCommand.php(267): file_get_contents('D:\\\\PROJECTS\\\\por...')
+#3 D:\\PROJECTS\\portfolio\\vendor\\laravel\\breeze\\src\\Console\\InstallsBladeStack.php(62): Laravel\\Breeze\\Console\\InstallCommand->replaceInFile('/home', '/dashboard', 'D:\\\\PROJECTS\\\\por...')
+#4 D:\\PROJECTS\\portfolio\\vendor\\laravel\\breeze\\src\\Console\\InstallCommand.php(60): Laravel\\Breeze\\Console\\InstallCommand->installBladeStack()
+#5 D:\\PROJECTS\\portfolio\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Laravel\\Breeze\\Console\\InstallCommand->handle()
+#6 D:\\PROJECTS\\portfolio\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#7 D:\\PROJECTS\\portfolio\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 D:\\PROJECTS\\portfolio\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 D:\\PROJECTS\\portfolio\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(662): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 D:\\PROJECTS\\portfolio\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(208): Illuminate\\Container\\Container->call(Array)
+#11 D:\\PROJECTS\\portfolio\\vendor\\symfony\\console\\Command\\Command.php(326): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 D:\\PROJECTS\\portfolio\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(178): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#13 D:\\PROJECTS\\portfolio\\vendor\\symfony\\console\\Application.php(1081): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 D:\\PROJECTS\\portfolio\\vendor\\symfony\\console\\Application.php(320): Symfony\\Component\\Console\\Application->doRunCommand(Object(Laravel\\Breeze\\Console\\InstallCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 D:\\PROJECTS\\portfolio\\vendor\\symfony\\console\\Application.php(174): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 D:\\PROJECTS\\portfolio\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(200): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 D:\\PROJECTS\\portfolio\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 {main}
+"} 
