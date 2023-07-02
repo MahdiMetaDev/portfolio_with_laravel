@@ -11,7 +11,20 @@
                 <li class="nav__item"><a href="<?php echo e(route('site.blog.index')); ?>" class="nav__link">Blog</a></li>
                 <li class="nav__item"><a href="<?php echo e(route('site.portfolio.index')); ?>" class="nav__link">Portfolio</a></li>
                 <li class="nav__item"><a href="<?php echo e(route('admin.dashboard.index')); ?>" class="nav__link">Admin</a></li>
-                <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                <?php if(auth()->user()): ?>
+                    <li class="nav__item"><a href="#profile.html" class="nav__item__orange">Hello <?php echo e(auth()->user()->name); ?></a></li>
+                    <form method="post" action="<?php echo e(route('logout')); ?>">
+                        <?php echo csrf_field(); ?>
+                        <li class="nav__item__far"><input type="submit" value="Logout"></li>
+                    </form>
+
+                <?php else: ?>
+                    <li class="nav__item__far">
+                        <a href="<?php echo e(route('register')); ?>" class="nav__item__orange">Register</a>
+                        <span>|</span>
+                        <a href="<?php echo e(route('login')); ?>" class="nav__item__orange">Login</a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
 

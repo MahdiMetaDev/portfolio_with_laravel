@@ -11,7 +11,20 @@
                 <li class="nav__item"><a href="{{ route('site.blog.index') }}" class="nav__link">Blog</a></li>
                 <li class="nav__item"><a href="{{ route('site.portfolio.index') }}" class="nav__link">Portfolio</a></li>
                 <li class="nav__item"><a href="{{ route('admin.dashboard.index') }}" class="nav__link">Admin</a></li>
-                <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                @if(auth()->user())
+                    <li class="nav__item"><a href="#profile.html" class="nav__item__orange">Hello {{ auth()->user()->name }}</a></li>
+                    <form method="post" action="{{ route('logout') }}">
+                        @csrf
+                        <li class="nav__item__far"><input type="submit" value="Logout"></li>
+                    </form>
+{{--                    <li class="nav__item__far"><a href="{{ route('logout') }}" class="nav__link">Logout</a></li>--}}
+                @else
+                    <li class="nav__item__far">
+                        <a href="{{ route('register') }}" class="nav__item__orange">Register</a>
+                        <span>|</span>
+                        <a href="{{ route('login') }}" class="nav__item__orange">Login</a>
+                    </li>
+                @endif
             </ul>
         </div>
 
