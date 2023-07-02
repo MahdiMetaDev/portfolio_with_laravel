@@ -1,7 +1,7 @@
 @extends('admin.layout.base')
 
 @section('top_title')
-    Blogs List
+    Users List
 @endsection
 
 @section('content')
@@ -10,21 +10,20 @@
             <thead>
             <tr>
                 <th>Id</th>
-                <th>Author</th>
-                <th>Title</th>
+                <th>Name</th>
+                <th>Email</th>
                 <th>Created At</th>
-                <th>settings</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($blogs as $blog)
+            @foreach($users as $user)
                 <tr>
-                    <td>{{ $blog->id }}</td>
-                    <td>{{ $blog->user->name }}</td>
-                    <td>{{ $blog->title }}</td>
-                    <td>{{ $blog->created_at }}</td>
+                    <td>{{ $user->id }}</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->created_at }}</td>
                     <td>
-                        <button class="bg-dark"><a class="text-light" href="{{ route('admin.blog.show', $blog->id) }}">show</a></button>
+                        <button class="bg-dark"><a class="text-light" href="{{ route('admin.user.show', $user->id) }}">show</a></button>
                     </td>
                 </tr>
             @endforeach

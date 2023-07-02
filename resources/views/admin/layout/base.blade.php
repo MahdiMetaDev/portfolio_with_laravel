@@ -30,6 +30,12 @@
                 @yield('top_title')
             </h1>
 
+            @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
+
             @yield('content')
         </main>
 

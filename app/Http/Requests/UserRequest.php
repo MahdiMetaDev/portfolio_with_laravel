@@ -23,6 +23,7 @@ class UserRequest extends FormRequest
     {
         $rules = [
             'name' => 'required|string',
+            'family' => 'required|string'
         ];
 
         if (request()->method() == self::METHOD_POST) {
