@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -12,7 +13,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-       return view();
+        $blogs = Blog::orderByDesc('id')->get();
+
+        return view('admin.blog.index', compact('blogs'));
     }
 
     /**
@@ -20,7 +23,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.blog.create');
     }
 
     /**
@@ -34,9 +37,9 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Blog $blog)
     {
-        //
+        return view('admin.blog.show', ['blog' => $blog]);
     }
 
     /**
@@ -44,7 +47,7 @@ class BlogController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.blog.edit');
     }
 
     /**

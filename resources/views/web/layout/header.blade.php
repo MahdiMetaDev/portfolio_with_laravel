@@ -10,6 +10,7 @@
                 <li class="nav__item"><a href="{{ route('site.root') }}" class="nav__link active">Home</a></li>
                 <li class="nav__item"><a href="{{ route('site.blog.index') }}" class="nav__link">Blog</a></li>
                 <li class="nav__item"><a href="{{ route('site.portfolio.index') }}" class="nav__link">Portfolio</a></li>
+                <li class="nav__item"><a href="{{ route('admin.dashboard.index') }}" class="nav__link">Admin</a></li>
                 <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
             </ul>
         </div>
