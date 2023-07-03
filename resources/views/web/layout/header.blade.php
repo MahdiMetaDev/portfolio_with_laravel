@@ -7,12 +7,12 @@
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li class="nav__item"><a href="{{ route('site.root') }}" class="nav__link active">Home</a></li>
-                <li class="nav__item"><a href="{{ route('site.blog.index') }}" class="nav__link">Blog</a></li>
-                <li class="nav__item"><a href="{{ route('site.portfolio.index') }}" class="nav__link">Portfolio</a></li>
+                <li class="nav__item"><a href="{{ route('root') }}" class="nav__link active">Home</a></li>
+                <li class="nav__item"><a href="{{ route('blog.index') }}" class="nav__link">Blog</a></li>
+                <li class="nav__item"><a href="{{ route('portfolio.index') }}" class="nav__link">Portfolio</a></li>
                 <li class="nav__item"><a href="{{ route('admin.dashboard.index') }}" class="nav__link">Admin</a></li>
                 @if(auth()->user())
-                    <li class="nav__item"><a href="#profile.html" class="nav__item__orange">Hello {{ auth()->user()->name }}</a></li>
+                    <li class="nav__item"><a href="{{ route('profile.edit') }}" class="nav__item__orange">Hello {{ auth()->user()->name }}</a></li>
                     <form method="post" action="{{ route('logout') }}">
                         @csrf
                         <li class="nav__item__far"><input type="submit" value="Logout"></li>

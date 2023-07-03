@@ -6,18 +6,17 @@
             Create Role For Users
         </div>
         <div class="card-body">
-            <form method="post" class="form-control" novalidate action="{{ route('admin.role.store') }}">
+            <form method="post" class="row g-3" novalidate action="{{ route('admin.role.store') }}">
                 @csrf
-                <div class="">
-                    <label for="role_name">
-                        <input type="text" placeholder="role_name" name="name"
-                               value="{{ old('name') }}" id="role_name">
-                    </label>
+                <div class="col-md-6">
+                    <input type="text" placeholder="role_name" name="name"
+                           class="form-control"
+                           value="{{ old('name') }}">
                     @error('name')
-                        <span class="text-danger text-sm">{{ $message }}</span>
+                    <span class="text-danger text-sm">{{ $message }}</span>
                     @enderror
                 </div>
-                <input type="submit" value="Create">
+                <input type="submit" value="Create" class="btn btn-success">
             </form>
         </div>
     </div>

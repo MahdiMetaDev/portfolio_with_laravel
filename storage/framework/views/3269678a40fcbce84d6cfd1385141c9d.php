@@ -63,7 +63,7 @@
                 <img src="<?php echo e(asset('assets/img/perfil.png')); ?>" alt="">
 
                 <div class="portfolio__link">
-                    <a href="<?php echo e(route('site.portfolio.index')); ?>" class="portfolio__link-name">View details</a>
+                    <a href="<?php echo e(route('portfolio.index')); ?>" class="portfolio__link-name">View details</a>
                 </div>
             </div>
         </div>

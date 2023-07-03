@@ -50,15 +50,21 @@
         </h6>
         <ul class="nav flex-column mb-2">
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('admin.user.create') }}">
                     <span data-feather="file-text"></span>
                     create user
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('admin.blog.create') }}">
                     <span data-feather="file-text"></span>
                     create blog
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.role.create') }}">
+                    <span data-feather="file-text"></span>
+                    create role
                 </a>
             </li>
         </ul>

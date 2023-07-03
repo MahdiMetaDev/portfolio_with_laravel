@@ -65,7 +65,7 @@
                 <img src="{{ asset('assets/img/perfil.png') }}" alt="">
 
                 <div class="portfolio__link">
-                    <a href="{{ route('site.portfolio.index') }}" class="portfolio__link-name">View details</a>
+                    <a href="{{ route('portfolio.index') }}" class="portfolio__link-name">View details</a>
                 </div>
             </div>
         </div>

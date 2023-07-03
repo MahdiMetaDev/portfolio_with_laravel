@@ -18,19 +18,18 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', [HomeController::class, 'index'])->name('root');
 Route::get('portfolio', [PortfolioController::class, 'index'])->name('portfolio.index');
 Route::resource('blog', BlogController::class);
 
-//Route::get('auth', function () {
+//Route::get('/', function () {
 //    return Inertia::render('Welcome', [
 //        'canLogin' => Route::has('login'),
 //        'canRegister' => Route::has('register'),
 //        'laravelVersion' => Application::VERSION,
 //        'phpVersion' => PHP_VERSION,
 //    ]);
-//})->name('auth');
+//});
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
