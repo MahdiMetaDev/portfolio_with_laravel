@@ -32,7 +32,7 @@
                     @error('email')
                     <span class="text-danger text-sm">{{ $message }}</span>
                     @enderror
-                    <input type="submit" value="Update" class="btn btn-success">
+                    <input type="submit" value="Update" class="btn btn-success mt-3">
                 </div>
             </form>
         </div>

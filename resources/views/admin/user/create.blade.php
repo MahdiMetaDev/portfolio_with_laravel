@@ -39,7 +39,7 @@
                     @error('password')
                     <span class="text-danger text-sm">{{ $message }}</span>
                     @enderror
-                    <input type="submit" value="Create" class="btn btn-success">
+                    <input type="submit" value="Create" class="btn btn-success mt-3">
                 </div>
             </form>
         </div>

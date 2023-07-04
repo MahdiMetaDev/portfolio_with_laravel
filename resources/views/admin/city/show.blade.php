@@ -1,6 +1,6 @@
 @extends('admin.layout.base')
 
 @section('content')
-    blog details
-    <h4>{{ $blog->id }}</h4>
+    City details
+    <h4>{{ $city->id }}</h4>
 @endsection()
