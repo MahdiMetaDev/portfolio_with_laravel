@@ -17,7 +17,6 @@
                         @csrf
                         <li class="nav__item__far"><input type="submit" value="Logout"></li>
                     </form>
-{{--                    <li class="nav__item__far"><a href="{{ route('logout') }}" class="nav__link">Logout</a></li>--}}
                 @else
                     <li class="nav__item__far">
                         <a href="{{ route('register') }}" class="nav__item__orange">Register</a>

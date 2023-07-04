@@ -17,7 +17,6 @@
                         <?php echo csrf_field(); ?>
                         <li class="nav__item__far"><input type="submit" value="Logout"></li>
                     </form>
-
                 <?php else: ?>
                     <li class="nav__item__far">
                         <a href="<?php echo e(route('register')); ?>" class="nav__item__orange">Register</a>

@@ -209,6 +209,16 @@ img {
     overflow: hidden;
 }
 
+.blog {
+    position: relative;
+    background-color: var(--orange-color);
+    overflow: hidden;
+}
+
+.blog_img {
+    display: inline-block;
+}
+
 .home__container {
     height: calc(100vh - var(--header-height));
     row-gap: 5rem;
@@ -216,6 +226,13 @@ img {
 
 .home__title {
     align-self: flex-end;
+    font-size: var(--big-font-size);
+    color: var(--white-color);
+    line-height: .8;
+}
+
+.blog__title {
+    align-self: center;
     font-size: var(--big-font-size);
     color: var(--white-color);
     line-height: .8;
@@ -559,7 +576,11 @@ img {
 /* For tall screens on mobiles y desktop*/
 @media screen and (min-height: 721px) {
     .home__container {
-        height: 640px;
+        height: 580px;
+    }
+
+    .blog__container {
+        height: 1000px;
     }
 
     .home__img {
