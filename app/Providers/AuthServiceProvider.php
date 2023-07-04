@@ -4,6 +4,7 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 use App\Models\Blog;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
@@ -24,8 +25,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-//        Gate::define('update-blog', function (User $user, Blog $blog) {
-//            return $user->id === $blog->user_id;
-//        });
+        Gate::define('can', function (User $user, string $name) {
+            return $user->roles()->where('name', $name)->exists();
+        });
     }
 }

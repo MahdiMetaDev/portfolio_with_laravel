@@ -12,9 +12,4 @@ class BlogService extends BaseService
     {
         parent::__construct($blog);
     }
-
-    public function show(Blog $blog): JsonResource
-    {
-        return BlogResource::make($blog);
-    }
 }

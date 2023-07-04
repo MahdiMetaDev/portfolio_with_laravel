@@ -8,15 +8,16 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 
 const form = useForm({
     name: '',
+    family: '',
     email: '',
     password: '',
-    password_confirmation: '',
+    c_password: '',
 });
 
 const submit = () => {
     form.post(route('register'), {
         onFinish: () => {
-            form.reset('password', 'password_confirmation');
+            form.reset('password', 'c_password');
         },
     });
 };
@@ -41,6 +42,22 @@ const submit = () => {
                 />
 
                 <InputError class="mt-2" :message="form.errors.name" />
+            </div>
+
+            <div class="mt-4">
+                <InputLabel for="family" value="Family" />
+
+                <TextInput
+                    id="family"
+                    type="text"
+                    class="mt-1 block w-full"
+                    v-model="form.family"
+                    required
+                    autofocus
+                    autocomplete="name"
+                />
+
+                <InputError class="mt-2" :message="form.errors.family" />
             </div>
 
             <div class="mt-4">
@@ -74,18 +91,18 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
+                <InputLabel for="c_password" value="Confirm Password" />
 
                 <TextInput
-                    id="password_confirmation"
+                    id="c_password"
                     type="password"
                     class="mt-1 block w-full"
-                    v-model="form.password_confirmation"
+                    v-model="form.c_password"
                     required
                     autocomplete="new-password"
                 />
 
-                <InputError class="mt-2" :message="form.errors.password_confirmation" />
+                <InputError class="mt-2" :message="form.errors.c_password" />
             </div>
 
             <div class="flex items-center justify-end mt-4">

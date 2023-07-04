@@ -6,20 +6,23 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 use App\Http\Services\UserService;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {
     public function __construct(private readonly UserService $userService)
     {
+        $this->middleware('admin');
     }
 
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        $users = User::orderByDesc('id')->get();
+        $users = $this->userService->index();
 
         return view('admin.user.index', compact('users'));
     }
@@ -27,7 +30,7 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
         return view('admin.user.create');
     }
@@ -35,7 +38,7 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(UserRequest $request)
+    public function store(UserRequest $request): RedirectResponse
     {
         $user = $this->userService->store($request->validated());
 
@@ -47,7 +50,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(User $user): View
     {
         return view('admin.user.show', [
             'user' => $user->load(['profile', 'image', 'comments', 'blogs'])
@@ -57,15 +60,15 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user): View
     {
-        return view('admin.user.edit');
+        return view('admin.user.edit', ['user', $user]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UserRequest $request, User $user)
+    public function update(UserRequest $request, User $user): RedirectResponse
     {
         $this->userService->update($user, $request->validated());
 
@@ -79,12 +82,12 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(User $user): RedirectResponse
     {
         $this->userService->delete($user);
 
-        session()->flash(
-            'success', 'User has deleted successfully!'
-        );
+        session()->flash('success', 'User has deleted successfully!');
+
+        return redirect(route('admin.user.index'));
     }
 }

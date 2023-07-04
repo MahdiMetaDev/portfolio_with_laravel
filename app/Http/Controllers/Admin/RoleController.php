@@ -6,20 +6,23 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\RoleRequest;
 use App\Http\Services\RoleService;
 use App\Models\Role;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class RoleController extends Controller
 {
     public function __construct(private readonly RoleService $roleService)
     {
+        $this->middleware('admin');
     }
 
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        $roles = Role::orderByDesc('id')->get();
+        $roles = $this->roleService->index();
 
         return view('admin.role.index', compact('roles'));
     }
@@ -27,7 +30,7 @@ class RoleController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
         return view('admin.role.create');
     }
@@ -35,7 +38,7 @@ class RoleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(RoleRequest $request)
+    public function store(RoleRequest $request): RedirectResponse
     {
         $this->roleService->store($request->validated());
 
@@ -47,7 +50,7 @@ class RoleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Role $role)
+    public function show(Role $role): View
     {
         return view('admin.role.show', ['role' => $role]);
     }
@@ -55,7 +58,7 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Role $role)
+    public function edit(Role $role): View
     {
         return view('admin.role.edit', [
             'role' => $role->load(["users"])
@@ -65,9 +68,11 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(RoleRequest $request, Role $role)
+    public function update(RoleRequest $request, Role $role): RedirectResponse
     {
         $this->roleService->update($role, $request->validated());
+
+        session()->flash('success', 'Role has Updated Successfully!');
 
         return redirect(route('admin.role.show', $role->id));
     }
@@ -75,10 +80,12 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Role $role)
+    public function destroy(Role $role): RedirectResponse
     {
         $this->roleService->delete($role);
 
-        return back();
+        session()->flash('success', 'Role has Deleted Successfully!');
+
+        return redirect(route('admin.role.index'));
     }
 }

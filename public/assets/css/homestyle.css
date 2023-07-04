@@ -576,7 +576,7 @@ img {
 /* For tall screens on mobiles y desktop*/
 @media screen and (min-height: 721px) {
     .home__container {
-        height: 580px;
+        height: 645px;
     }
 
     .blog__container {
