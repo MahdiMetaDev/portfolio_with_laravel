@@ -3,17 +3,24 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Services\ProfileService;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
+    public function __construct(private readonly ProfileService $profileService)
+    {
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $profiles = $this->profileService->index();
+
+        return view('admin.profile.index', compact('profiles'));
     }
 
     /**
@@ -21,7 +28,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.profile.create');
     }
 
     /**
@@ -37,7 +44,9 @@ class ProfileController extends Controller
      */
     public function show(Profile $profile)
     {
-        //
+        return view('admin.profile.show', [
+            'profile' => $profile->load(['user', 'address', 'education'])
+        ]);
     }
 
     /**
@@ -45,7 +54,7 @@ class ProfileController extends Controller
      */
     public function edit(Profile $profile)
     {
-        //
+        return view('admin.profile.edit', compact('profile'));
     }
 
     /**

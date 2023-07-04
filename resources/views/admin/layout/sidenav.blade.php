@@ -14,6 +14,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.role.index') }}">
+                    <span data-feather="file"></span>
+                    roles
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.blog.index') }}">
                     <span data-feather="shopping-cart"></span>
                     Blogs
@@ -26,19 +32,19 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('admin.country.index') }}">
                     <span data-feather="bar-chart-2"></span>
                     Countries
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('admin.city.index') }}">
                     <span data-feather="layers"></span>
                     Cities
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('admin.profile.index') }}">
                     <span data-feather="layers"></span>
                     Profiles
                 </a>

@@ -10,7 +10,7 @@
             <thead>
             <tr>
                 <th>Id</th>
-                <th>Country Id</th>
+                <th>Country Name</th>
                 <th>Name</th>
                 <th>Population</th>
                 <th>Created At</th>
@@ -20,7 +20,7 @@
             @foreach($cities as $city)
                 <tr>
                     <td>{{ $city->id }}</td>
-                    <td>{{ $city->country_id }}</td>
+                    <td>{{ $city->country->name }}</td>
                     <td>{{ $city->name }}</td>
                     <td>{{ $city->population }}</td>
                     <td>{{ $city->created_at }}</td>

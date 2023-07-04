@@ -1,9 +1,6 @@
 @extends('admin.layout.base')
 
 @section('content')
-    <h1>show role with its id</h1>
-    <hr>
-    {{ $role->name }}
-    {{ $role->id }}
-
+    <label for="role_name">Name</label>
+    <input type="text" value="{{ $role->name }}" id="role_name" disabled>
 @endsection()

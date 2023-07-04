@@ -40,7 +40,7 @@ class UserController extends Controller
      */
     public function store(UserRequest $request): RedirectResponse
     {
-        $user = $this->userService->store($request->validated());
+        $this->userService->store($request->validated());
 
         session()->flash('success', 'User has created successfully!');
 

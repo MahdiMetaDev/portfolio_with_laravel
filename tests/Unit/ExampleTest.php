@@ -19,7 +19,7 @@ class ExampleTest extends TestCase
 
     public function test_create_role_user_relation()
     {
-        $role = Role::find(2);
+        $role = Role::find(1);
         $user = User::find(11);
 
         DB::table('role_user')->insert([

@@ -15,8 +15,8 @@
                     @error('name')
                     <span class="text-danger text-sm">{{ $message }}</span>
                     @enderror
-                </div>
                 <input type="submit" value="Create" class="btn btn-success mt-3">
+                </div>
             </form>
         </div>
     </div>

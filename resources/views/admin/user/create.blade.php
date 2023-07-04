@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-md-6">
                     <input type="email" placeholder="Email" name="email"
-                           class="form-control"
+                           class="form-control mt-2"
                            value="{{ old('email') }}">
                     @error('email')
                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -34,9 +34,17 @@
                 </div>
                 <div class="col-md-6">
                     <input type="password" placeholder="Password" name="password"
-                           class="form-control"
+                           class="form-control mt-2"
                            value="{{ old('password') }}">
                     @error('password')
+                    <span class="text-danger text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="col-md-12">
+                    <input type="password" placeholder="Password Confirmation" name="c_password"
+                           class="form-control mt-2"
+                           value="{{ old('c_password') }}">
+                    @error('c_password')
                     <span class="text-danger text-sm">{{ $message }}</span>
                     @enderror
                     <input type="submit" value="Create" class="btn btn-success mt-3">

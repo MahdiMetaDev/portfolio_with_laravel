@@ -22,10 +22,9 @@ class BlogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required|numeric|exists:users',
+            'user_id' => 'required|numeric|exists:users,id',
             'title' => 'required|string|min:4',
             'description' => 'required|min:10',
-            'published' => 'required',
         ];
     }
 }

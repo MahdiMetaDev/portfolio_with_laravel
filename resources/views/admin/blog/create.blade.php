@@ -9,7 +9,7 @@
             <form method="post" class="row g-3" novalidate action="{{ route('admin.blog.store') }}">
                 @csrf
                 <div class="col-md-6 ">
-                    <input type="text" placeholder="blog_title" name="name"
+                    <input type="text" placeholder="blog_title" name="title"
                            class="form-control"
                            value="{{ old('title') }}">
                     @error('title')

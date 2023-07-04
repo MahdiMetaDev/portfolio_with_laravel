@@ -4,13 +4,13 @@
     <!--===== HOME =====-->
     <section class="home" id="home">
         <div class="home__container bd-grid">
-            <h1 class="home__title"><span>Welcome</span></h1>
+            <h1 class="home__title"><span>Hey</span></h1>
 
             <div class="home__scroll">
                 <a href="#about" class="home__scroll-link"><i class='bx bx-up-arrow-alt'></i>Scroll down</a>
             </div>
 
-            
+            <img src="<?php echo e(asset('assets/img/perfil.png')); ?>" alt="" class="home__img">
         </div>
     </section>
 
@@ -20,7 +20,7 @@
 
         <div class="about__container bd-grid">
             <div class="about__img">
-                <img src="<?php echo e(asset('assets/img/profile.jpg')); ?>" alt="">
+                <img src="<?php echo e(asset('assets/img/perfil.png')); ?>" alt="">
             </div>
 
             <div>
