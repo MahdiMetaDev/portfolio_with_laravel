@@ -15,6 +15,10 @@
                     @error('title')
                     <span class="text-danger text-sm">{{ $message }}</span>
                     @enderror
+{{--                    <x-forms.input-component--}}
+{{--                        type="text" placeholder="blog_title"--}}
+{{--                        name="title" input_class="form-control"--}}
+{{--                        value="{{ old('title') }}" span_class="text-danger text-sm"/>--}}
                 </div>
                 <div class="col-md-6">
                     <input type="text" placeholder="blog_description" name="description"

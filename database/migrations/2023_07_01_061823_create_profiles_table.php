@@ -20,7 +20,7 @@ return new class extends Migration {
 
             $table->string('national_code');
             $table->string('phone_number');
-
+            $table->unsignedTinyInteger('age');
 
             $table->timestamp('date_of_birth');
             $table->timestamps();

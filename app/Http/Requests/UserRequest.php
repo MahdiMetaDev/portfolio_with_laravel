@@ -23,7 +23,11 @@ class UserRequest extends FormRequest
     {
         $rules = [
             'name' => 'required|string',
-            'family' => 'required|string'
+            'family' => 'required|string',
+            'image' => 'image|mimes:png,jpg,jpeg,svg|max:2048',
+            'national_code' => '',
+            'phone_number' => '',
+            'date_of_birth' => '',
         ];
 
         if (request()->method() == self::METHOD_POST) {

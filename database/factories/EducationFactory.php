@@ -17,10 +17,8 @@ class EducationFactory extends Factory
      */
     public function definition(): array
     {
-        $profile_ids = Profile::pluck('id');
-
         return [
-            'profile_id' => $this->faker->unique()->randomElement($profile_ids),
+            'profile_id' => Profile::factory(),
             'university' => 'Ferdowsi',
             'enter_year' => 1995,
             'exit_year' => 2000,

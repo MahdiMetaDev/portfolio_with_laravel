@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ route('root') }}">My Site</a>
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ route('root') }}">My Site</a>
     <ul class="navbar-nav px-3">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             @auth()

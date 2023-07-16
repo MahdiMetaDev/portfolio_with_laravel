@@ -11,9 +11,9 @@ class BaseService
     {
     }
 
-    public function index(): Collection
+    public function index()
     {
-        return $this->model->orderByDesc('id')->get();
+        return $this->model->latest()->paginate(2);
     }
 
     public function store(array $payload = []): Model

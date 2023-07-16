@@ -18,7 +18,7 @@ class CityFactory extends Factory
     public function definition(): array
     {
         return [
-            'country_id' => Country::inRandomOrder()->first()->id,
+            'country_id' => Country::factory(),
             'name' => $this->faker->city,
             'population' => fake()->randomNumber(6)
         ];

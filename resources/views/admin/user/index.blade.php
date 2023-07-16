@@ -24,6 +24,7 @@
                     <td>{{ $user->created_at }}</td>
                     <td>
                         <button class="bg-dark"><a class="text-light" href="{{ route('admin.user.show', $user->id) }}">show</a></button>
+                        <button class="bg-primary"><a class="text-light" href="{{ route('admin.user.edit', $user->id) }}">edit</a></button>
                     </td>
                 </tr>
             @endforeach

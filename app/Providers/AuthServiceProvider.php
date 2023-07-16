@@ -26,7 +26,7 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Gate::define('can', function (User $user, string $name) {
-            return $user->roles()->where('name', $name)->exists();
+            return $user->hasRole($name) || $user->hasPermissions($name);
         });
     }
 }

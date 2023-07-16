@@ -12,7 +12,7 @@ class Profile extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'first_name', 'last_name', 'national_code', 'phone_number', 'date_of_birth',
+        'user_id', 'first_name', 'last_name', 'national_code', 'phone_number', 'date_of_birth', 'age'
     ];
 
     public function user(): BelongsTo

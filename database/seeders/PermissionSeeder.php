@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\PermissionEnums;
 use App\Models\Permission;
 use Illuminate\Database\Seeder;
 

@@ -6,7 +6,8 @@
             Create User
         </div>
         <div class="card-body">
-            <form method="post" class="row g-3" novalidate action="{{ route('admin.user.store') }}">
+            <form method="post" class="row g-3" novalidate action="{{ route('admin.user.store') }}"
+                  enctype="multipart/form-data">
                 @csrf
                 <div class="col-md-6 ">
                     <input type="text" placeholder="Name" name="name"
@@ -40,7 +41,7 @@
                     <span class="text-danger text-sm">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <input type="password" placeholder="Password Confirmation" name="c_password"
                            class="form-control mt-2"
                            value="{{ old('c_password') }}">
@@ -48,6 +49,14 @@
                     <span class="text-danger text-sm">{{ $message }}</span>
                     @enderror
                     <input type="submit" value="Create" class="btn btn-success mt-3">
+                </div>
+                <div class="col-md-6">
+                    <input type="file" name="image"
+                           class="form-control mt-2"
+                           value="{{ old('image') }}">
+                    @error('image')
+                    <span class="text-danger text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
             </form>
         </div>

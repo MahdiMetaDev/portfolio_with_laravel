@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Traits\HasLike;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -11,10 +13,14 @@ use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use function PHPUnit\Framework\isNull;
 
+/**
+ * @method hasPermission(mixed[] $permission_names)
+ */
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasLike;
 
     /**
      * The attributes that are mass assignable.
@@ -26,7 +32,22 @@ class User extends Authenticatable
         'family',
         'email',
         'password',
+        'active'
     ];
+
+    protected function name(): Attribute
+    {
+        return Attribute::make(
+            get: fn(string $value) => \Str::upper($value),
+        );
+    }
+
+    public function getMyFullNameAttribute(): string
+    {
+        return $this->name . ' ' . $this->family;
+    }
+
+    protected $appends = ['my_full_name'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -46,6 +67,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'active' => 'boolean'
     ];
 
     public function profile(): HasOne
@@ -76,5 +98,49 @@ class User extends Authenticatable
     public function permissions(): BelongsToMany
     {
         return $this->belongsToMany(Permission::class);
+    }
+
+    public function hasRole($role): bool
+    {
+        return $this->roles()->where('name', $role)->exists();
+    }
+
+    public function scopeHasPermission(Builder $query, array $permission_names): Builder
+    {
+        return $query->whereHas('roles', function ($q) use ($permission_names) {
+            $q->whereHas('permissions', function ($qq) use ($permission_names) {
+                $qq->whereIn('name', $permission_names);
+            });
+        });
+    }
+
+    public function hasPermissionsTo($permission_name): bool
+    {
+        return User::where('id', $this->id)->whereHas('roles', function ($q) use ($permission_name) {
+            $q->whereHas('permissions', function ($qq) use ($permission_name) {
+                $qq->where('name', $permission_name);
+            });
+        })->exists();
+
+//        $permission = Permission::where('name', $permission_name)->first();
+//
+//        if (!$permission) {
+//            return false;
+//        }
+//
+//        $role_names = $permission->roles()->pluck('name');
+//
+//        foreach ($role_names as $role_name) {
+//            if ($this->hasRole($role_name)) {
+//               return true;
+//            }
+//        }
+//
+//        return false;
+    }
+
+    public function myLikes(): HasMany
+    {
+        return $this->hasMany(Like::class, 'user_id', 'id');
     }
 }

@@ -11,7 +11,7 @@ class Address extends Model
     use HasFactory;
 
     protected $fillable = [
-        'profile_id', 'country_id', 'city_id', 'address',
+        'profile_id', 'city_id', 'street', 'zip_code'
     ];
 
     public function profile(): BelongsTo

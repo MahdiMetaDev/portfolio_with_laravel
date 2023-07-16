@@ -21,6 +21,7 @@ class ProfileFactory extends Factory
             'user_id' => User::factory(),
             'national_code' => fake()->randomNumber(9),
             'phone_number' => '0915' . fake()->randomNumber(7),
+            'age' => rand(5, 70),
             'date_of_birth' => $this->faker->dateTime,
         ];
     }

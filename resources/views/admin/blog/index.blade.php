@@ -24,11 +24,14 @@
                     <td>{{ $blog->title }}</td>
                     <td>{{ $blog->created_at }}</td>
                     <td>
-                        <button class="bg-dark"><a class="text-light" href="{{ route('admin.blog.show', $blog->id) }}">show</a></button>
+                        <button class="bg-dark"><a class="text-light" href="{{ route('admin.blog.show', $blog->id) }}">show</a>
+                        </button>
                     </td>
                 </tr>
             @endforeach
             </tbody>
         </table>
     </div>
+
+    {{ $blogs->links() }}
 @endsection()

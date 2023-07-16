@@ -25,7 +25,8 @@ class BlogController extends Controller
     {
         $blogs = $this->blogService->index();
 
-        return view('admin.blog.index', compact('blogs'));
+        return view('admin.blog.index', compact('blogs'))
+            ->with('i', (\request()->input('page', 1) - 1) * 5);
     }
 
     /**

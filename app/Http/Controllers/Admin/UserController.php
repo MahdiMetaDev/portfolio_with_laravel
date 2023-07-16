@@ -7,7 +7,6 @@ use App\Http\Requests\UserRequest;
 use App\Http\Services\UserService;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class UserController extends Controller
@@ -62,7 +61,9 @@ class UserController extends Controller
      */
     public function edit(User $user): View
     {
-        return view('admin.user.edit', ['user', $user]);
+        return view('admin.user.edit', [
+            'user' => $user->load(['image'])
+        ]);
     }
 
     /**
