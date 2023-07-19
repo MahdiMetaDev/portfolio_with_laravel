@@ -21,4 +21,14 @@ class Role extends Model
     {
         return $this->belongsToMany(Permission::class);
     }
+
+    public function male_users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class)->where('gender', 'male');
+    }
+
+    public function female_users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class)->where('gender', 'female');
+    }
 }

@@ -16,6 +16,7 @@ return new class extends Migration
 
             $table->foreignId('user_id')->comment('seller')->constrained();
             $table->string('title');
+            $table->boolean('status')->default(false);
 
             $table->timestamps();
         });

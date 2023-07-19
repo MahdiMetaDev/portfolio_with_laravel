@@ -15,7 +15,7 @@ class ProductFactory extends Factory
     {
         return [
             'title' => $this->faker->word(),
-            'created_at' => Carbon::now(),
+            'created_at' => Carbon::now()->subDays(rand(1, 20)),
             'updated_at' => Carbon::now(),
         ];
     }

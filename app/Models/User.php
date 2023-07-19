@@ -143,4 +143,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Like::class, 'user_id', 'id');
     }
+
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
+    }
 }

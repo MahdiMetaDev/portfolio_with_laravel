@@ -12,6 +12,7 @@ use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\Profile;
 use App\Models\User;
+use App\Models\View;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
@@ -51,25 +52,26 @@ class UserSeeder extends Seeder
                 }
             });
 
-        foreach (Product::limit(50)->inRandomOrder()->get() as $product) {
-            foreach (User::where('active', true)->get() as $user) {
+        foreach (User::where('active', true)->get() as $user) {
+            foreach (Product::limit(30)->inRandomOrder()->get() as $product) {
                 Like::factory()->create([
                     'user_id' => $user->id,
                     'likeable_id' => $product->id,
-                    'likeable_type' => Product::class
+                    'likeable_type' => Product::class,
+                    'created_at' => Carbon::now()->subDays(rand(1, 20))
                 ]);
             }
         }
 
-
-        foreach (Product::limit(50)->inRandomOrder()->get() as $product) {
-            foreach (User::where('active', true)->get() as $user) {
-                $product->views()->create([
-                    'user_id' => $user->id
+        foreach (User::where('active', true)->get() as $user) {
+            foreach (Product::limit(30)->inRandomOrder()->get() as $product) {
+                View::factory()->create([
+                    'user_id' => $user->id,
+                    'viewable_id' => $product->id,
+                    'viewable_type' => Product::class,
+                    'created_at' => Carbon::now()->subDays(rand(1, 20))
                 ]);
             }
         }
-
     }
 }
-

@@ -2,36 +2,22 @@
 
 namespace App\Http\Services;
 
+use App\Interfaces\Image\ImageRepositoryInterface;
+use Illuminate\Database\Eloquent\Model;
+
 class ImageService
 {
-    public function createImage($image, $eloquent): void
+    public function __construct(private readonly ImageRepositoryInterface $repository)
     {
-        $image_url = $image->store('public/images');
-
-        // get uploaded image details
-        $uploadedImageFileName = $image->getClientOriginalName();
-        $uploadedImageFileExtension = $image->getClientOriginalExtension();
-
-        $eloquent->image()->create([
-            'name' => $uploadedImageFileName,
-            'url' => $image_url,
-            'extension' => $uploadedImageFileExtension,
-        ]);
     }
 
-    public function updateImage($image, $eloquent): void
+    public function store($image, $eloquent)
     {
-        if ($image) {
-            $image_url = $image->store('public/images');
+        $this->repository->createImage($image, $eloquent);
+    }
 
-            $uploadedImageFileName = $image->getClientOriginalName();
-            $uploadedImageFileExtension = $image->getClientOriginalExtension();
-
-            $eloquent->image()->update([
-                'name' => $uploadedImageFileName,
-                'url' => $image_url,
-                'extension' => $uploadedImageFileExtension,
-            ]);
-        }
+    public function update($image, $eloquent)
+    {
+        $this->repository->updateImage($image, $eloquent);
     }
 }

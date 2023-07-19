@@ -22,20 +22,4 @@ class Like extends Model
     {
         return $this->belongsTo(User::class);
     }
-
-    public function getTitleAttribute()
-    {
-//        return match ($this->likeable_type) {
-//            User::class => $this->likeable->name,
-//            default => $this->likeable->title,
-//        };
-        switch ($this->likeable_type) {
-            case Blog::class:
-                return $this->likeable->title;
-            case User::class:
-                return $this->likeable->name;
-        }
-    }
-
-    protected $appends = ['title'];
 }

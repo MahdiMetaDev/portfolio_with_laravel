@@ -16,6 +16,7 @@ return new class extends Migration
 
             $table->string('name');
             $table->string('family');
+            $table->string('gender');
             $table->boolean('active')->default(false);
 
             $table->string('email')->unique();

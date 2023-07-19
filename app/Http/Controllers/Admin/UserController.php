@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 use App\Http\Services\UserService;
+use App\Interfaces\User\UserRepositoryInterface;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class UserController extends Controller
 {
-    public function __construct(private readonly UserService $userService)
+    public function __construct(private readonly UserService $userService,)
     {
         $this->middleware('admin');
     }
@@ -19,9 +20,9 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index(UserRequest $request): View
     {
-        $users = $this->userService->index();
+        $users = $this->userService->index($request->validated());
 
         return view('admin.user.index', compact('users'));
     }
