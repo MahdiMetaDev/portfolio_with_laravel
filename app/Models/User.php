@@ -3,15 +3,19 @@
 namespace App\Models;
 
 use App\Traits\HasLike;
+use App\Traits\HasUuid;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Log;
 use Laravel\Sanctum\HasApiTokens;
 use function PHPUnit\Framework\isNull;
 
@@ -20,7 +24,8 @@ use function PHPUnit\Framework\isNull;
  */
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasLike;
+    use HasApiTokens, HasFactory, Notifiable, HasLike, HasUuid;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -28,8 +33,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'uuid',
         'name',
         'family',
+        'gender',
         'email',
         'password',
         'active'
@@ -147,5 +154,10 @@ class User extends Authenticatable
     public function orders(): HasMany
     {
         return $this->hasMany(Order::class);
+    }
+
+    public function metas(): MorphMany
+    {
+        return $this->morphMany(Meta::class, 'metaable');
     }
 }

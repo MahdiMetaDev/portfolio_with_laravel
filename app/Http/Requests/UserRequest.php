@@ -24,6 +24,7 @@ class UserRequest extends FormRequest
         $rules = [
             'name' => 'required|string',
             'family' => 'required|string',
+            'gender' => 'required|string',
             'image' => 'image|mimes:png,jpg,jpeg,svg|max:2048',
             'national_code' => '',
             'phone_number' => '',

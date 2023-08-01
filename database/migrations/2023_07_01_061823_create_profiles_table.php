@@ -18,11 +18,11 @@ return new class extends Migration {
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
 
-            $table->string('national_code');
-            $table->string('phone_number');
-            $table->unsignedTinyInteger('age');
+            $table->string('national_code')->default('051334934');
+            $table->string('phone_number')->default('09155447446');
+            $table->unsignedTinyInteger('age')->default(23);
 
-            $table->timestamp('date_of_birth');
+            $table->timestamp('date_of_birth')->nullable();
             $table->timestamps();
         });
     }

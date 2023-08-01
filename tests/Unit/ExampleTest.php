@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Enums\UserMetaEnum;
 use App\Models\Permission;
 use App\Models\Product;
 use App\Models\Role;
@@ -12,7 +13,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use JetBrains\PhpStorm\NoReturn;
 use Tests\TestCase;
-use function PHPUnit\Framework\assertTrue;
+//use function PHPUnit\Framework\assertTrue;
 
 class ExampleTest extends TestCase
 {
@@ -190,5 +191,23 @@ class ExampleTest extends TestCase
         dd($data->toArray());
     }
 
+    #[NoReturn] public function test_meta_for_users()
+    {
+        $user = User::find(5);
 
+        $user->metas()->updateOrCreate([
+            'key' => UserMetaEnum::AGE->value,
+        ], [
+            'value' => 20,
+        ]);
+
+        dd('ok');
+    }
+
+    #[NoReturn] public function test_queryBuilder()
+    {
+        $users = DB::table('products')
+            ->get();
+        dd($users);
+    }
 }

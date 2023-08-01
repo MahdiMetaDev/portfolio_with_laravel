@@ -20,9 +20,9 @@ class RoleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(RoleRequest $request): View
+    public function index(Request $request): View
     {
-        $roles = $this->roleService->index($request->validated());
+        $roles = $this->roleService->index($request->all());
 
         return view('admin.role.index', compact('roles'));
     }

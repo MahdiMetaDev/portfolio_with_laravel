@@ -8,6 +8,7 @@ use App\Http\Services\UserService;
 use App\Interfaces\User\UserRepositoryInterface;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class UserController extends Controller
@@ -20,9 +21,9 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(UserRequest $request): View
+    public function index(Request $request): View
     {
-        $users = $this->userService->index($request->validated());
+        $users = $this->userService->index($request->all());
 
         return view('admin.user.index', compact('users'));
     }
@@ -91,5 +92,14 @@ class UserController extends Controller
         session()->flash('success', 'User has deleted successfully!');
 
         return redirect(route('admin.user.index'));
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+
+        $users = $this->userService->search($search);
+
+        return view('admin.user.index', compact('users'));
     }
 }

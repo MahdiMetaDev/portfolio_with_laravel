@@ -6,6 +6,8 @@ use App\Interfaces\Image\ImageRepositoryInterface;
 use App\Interfaces\User\UserRepositoryInterface;
 use App\Models\User;
 use App\Repositories\BaseRepository;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 class UserRepository extends BaseRepository implements UserRepositoryInterface
@@ -19,7 +21,9 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     {
         $user = parent::store($payload);
 
-        $user->profile()->create();
+        $user->profile()->create($payload);
+
+        return $user;
     }
 
     public function update($eloquent, array $payload = []): Model
@@ -34,5 +38,17 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
             'phone_number' => '09150000000',
             'date_of_birth' => now(),
         ]);
+
+        return $user;
+    }
+
+    public function search(string $search): Collection
+    {
+        return $this->query()
+            ->where(function ($query) use ($search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('email', 'like', '%' . $search . '%');
+            })
+            ->get();
     }
 }

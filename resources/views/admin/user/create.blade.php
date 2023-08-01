@@ -26,6 +26,12 @@
                     @enderror
                 </div>
                 <div class="col-md-6">
+                    <select name="gender" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
                     <input type="email" placeholder="Email" name="email"
                            class="form-control mt-2"
                            value="{{ old('email') }}">

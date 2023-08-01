@@ -17,7 +17,7 @@ class UserController extends ApiBaseController
     /**
      * Display a listing of the resource.
      */
-    public function index(): JsonResponse
+    public function index()
     {
         $users = $this->userService->index();
 
@@ -44,14 +44,8 @@ class UserController extends ApiBaseController
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(User $user)
     {
-        $user = User::find($id);
-
-        if (is_null($user)) {
-            return $this->sendError('User Not Found!!');
-        }
-
         $data = $this->userService->show($user);
 
         return $this->sendResponse($data, 'User Retrieved Successfully!');
@@ -78,6 +72,17 @@ class UserController extends ApiBaseController
         $this->userService->delete($user);
 
         return $this->sendResponse(message: 'User Deleted Successfully!');
+    }
 
+    public function restore(User $user)
+    {
+        $user->restore();
+        return 'user restored successfully!';
+    }
+
+    public function forceDelete(User $user)
+    {
+        $user->forceDelete();
+        return 'user deleted permanently!';
     }
 }

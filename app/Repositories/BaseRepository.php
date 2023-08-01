@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\DB;
 
 class BaseRepository implements BaseRepositoryInterface
 {
@@ -47,12 +48,20 @@ class BaseRepository implements BaseRepositoryInterface
 
     public function store(array $payload = []): Model
     {
-        return $this->model->create($payload);
+        DB::transaction(function () use ($payload){
+            return $this->model->create($payload);
+        });
     }
 
     public function update($eloquent, array $payload = []): Model
     {
-        $eloquent->update($payload);
+        DB::beginTransaction();
+        try {
+            $eloquent->update($payload);
+            DB::commit();
+        }catch (\Exception $exception) {
+            DB::rollBack();
+        }
 
         return $eloquent;
     }

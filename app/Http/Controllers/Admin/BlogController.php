@@ -21,9 +21,9 @@ class BlogController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(BlogRequest $request): View
+    public function index(Request $request): View
     {
-        $blogs = $this->blogService->index($request->validated());
+        $blogs = $this->blogService->index($request->all());
 
         return view('admin.blog.index', compact('blogs'))
             ->with('i', (\request()->input('page', 1) - 1) * 5);

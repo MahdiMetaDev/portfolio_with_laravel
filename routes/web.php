@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Web\BlogController;
-use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\Web\{
+    BlogController,
+    HomeController,
+};
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -17,6 +19,10 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Route::get('/{locale}', function ($locale){
+//   Session::put('locale', $locale);
+//   return redirect()->back();
+//})->name('trans');
 Route::get('/', [HomeController::class, 'index'])->name('root');
 Route::get('portfolio', [PortfolioController::class, 'index'])->name('portfolio.index');
 Route::resource('blog', BlogController::class);

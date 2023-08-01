@@ -7,6 +7,7 @@ use App\Interfaces\Role\RoleRepositoryInterface;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class RoleService
 {
@@ -14,9 +15,9 @@ class RoleService
     {
     }
 
-    public function index(RoleRequest $request)
+    public function index(array $payload = [])
     {
-        return $this->repository->all($request->validated());
+        return $this->repository->all($payload);
     }
 
     public function show(Role $role): Model
@@ -26,16 +27,22 @@ class RoleService
 
     public function store(array $payload = []): Model
     {
-        return $this->repository->store($payload);
+        DB::transaction(function () use ($payload) {
+            return $this->repository->store($payload);
+        });
     }
 
     public function update($model, array $payload = []): Model
     {
-        return $this->repository->update($model, $payload);
+        DB::transaction(function () use ($model, $payload) {
+            return $this->repository->update($model, $payload);
+        });
     }
 
     public function delete($model): bool
     {
-        return $this->repository->delete($model);
+        DB::transaction(function () use ($model) {
+            return $this->repository->delete($model);
+        });
     }
 }

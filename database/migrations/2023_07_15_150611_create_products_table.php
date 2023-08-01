@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('user_id')->comment('seller')->constrained();
+            $table->foreignId('user_id')->comment('seller')->constrained()
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->string('title');
             $table->boolean('status')->default(false);
 

@@ -7,8 +7,11 @@ use App\Http\Resources\BlogResource;
 use App\Interfaces\Blog\BlogRepositoryInterface;
 use App\Models\Blog;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\DB;
 
 class BlogService
 {
@@ -19,9 +22,9 @@ class BlogService
     {
     }
 
-    public function index(BlogRequest $request)
+    public function index(array $payload): Collection
     {
-        return $this->repository->all($request->validated());
+        return $this->repository->all($payload);
     }
 
     public function show(Blog $blog): Model
@@ -31,24 +34,26 @@ class BlogService
 
     public function store(array $payload = []): Model
     {
-        $blog = $this->repository->store($payload);
-
-        $this->imageService->store($payload['image'], $blog);
-
-        return $blog;
+        DB::transaction(function () use ($payload) {
+            $blog = $this->repository->store($payload);
+            $this->imageService->store($payload['image'], $blog);
+            return $blog;
+        });
     }
 
     public function update($model, array $payload = []): Model
     {
-        $blog = $this->repository->update($model, $payload);
-
-        $this->imageService->update($payload['image'], $blog);
-
-        return $blog;
+        DB::transaction(function () use ($model, $payload) {
+            $blog = $this->repository->update($model, $payload);
+            $this->imageService->update($payload['image'], $blog);
+            return $blog;
+        });
     }
 
     public function delete($model): bool
     {
-        return $this->repository->delete($model);
+        DB::transaction(function () use ($model) {
+            return $this->repository->delete($model);
+        });
     }
 }

@@ -33,5 +33,4 @@
         </table>
     </div>
 
-    {{ $blogs->links() }}
 @endsection()
